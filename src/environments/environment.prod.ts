@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseURL: "https://forumbennis.herokuapp.com/"
+  baseURL: "https://fdimfront.herokuapp.com/"
 
 };

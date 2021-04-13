@@ -2,22 +2,21 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {JwtHelper} from "angular2-jwt";
 
-// import {environment} from '../../environments/environment';
-// const BACKEND_URL = environment.apiURL;
+import {environment} from '../../environments/environment';
+const BACKEND_URL = environment.baseURL;
 
 
 @Injectable()
 export class AuthenticationService{
-  private host:string="https://forumbennis.herokuapp.com/";
   private jwtToken:string;
   private roles:Array<any>=[];
   constructor(private http:HttpClient){}
   login(user){
-    return this.http.post(this.host+"/login",user,{ observe: 'response'
+    return this.http.post(BACKEND_URL+"/login",user,{ observe: 'response'
     });
   }
   register(user){
-    return this.http.post(this.host+"/register",user);
+    return this.http.post(BACKEND_URL+"/register",user);
   }
 
   saveToken(jwtToken){

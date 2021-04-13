@@ -3,20 +3,15 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  PHP_API_SERVER = "http://wdpf-ccsl.rf.gd/api";
-
-
-
-  public host:String="http://localhost:8081/";
-
   constructor(private httpClient: HttpClient) { }
-    
+
 
 
 
