@@ -1,0 +1,175 @@
+<header id="header" class="fixed-top">
+  <div class="container-fluid">
+
+    <div class="row justify-content-center">
+      <div class="col-xl-11 d-flex align-items-center">
+        <a routerLink="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a routerLink="">Acceuil</a></li>
+            <li class="drop-down"><a routerLink="#about">QUI SOMMES-NOUS</a>
+              <ul>
+                <li><a routerLink="/page1">Présentation De La Fédération</a></li>
+                <li><a routerLink="/page2">Principales Missions De La Fédération</a></li>
+                <li><a routerLink="/page3">Bureau De La Fédération</a></li>
+                <li><a routerLink="/page4">Conseil D’Administration</a></li>
+              </ul>
+            </li>
+            <li class="drop-down"><a routerLink="">Services</a>
+              <ul>
+                <li><a routerLink="/page5">Secteur Menier</a></li>
+                <li><a routerLink="/page6">Cadre Legislatif Et Reglementire</a></li>
+                <li><a routerLink="/page7">Géologie Du Maroc</a></li>
+              </ul>
+            </li>
+
+            <li><a routerLink="#team">Nos membres</a></li>
+            <li><a routerLink="/contact">Contactez-nous</a></li>
+            <li><a routerLink="/login">Se connecter</a></li>
+
+          </ul>
+        </nav><!-- .nav-menu -->
+      </div>
+    </div>
+
+  </div>
+</header><!-- End Header -->
+
+<div class="container-fluid">
+  <div class="section-bg">
+<div class="page-content">
+  <div class="form-v6-content">
+    <div class="form-left">
+      <img src="../../assets/img/b2.png" style="margin-top: 150px" alt="form">
+    </div>
+    <form class="form-detail" #f="ngForm" (ngSubmit)="onRegister(f.value)">
+      <h2>Créer un compte</h2>
+      <div class="form-row">
+        <input type="text" name="name" id="name" [(ngModel)]="name" class="input-text ng-invalid ng-touched" placeholder="Your Name" required
+               minlength="5" #re="ngModel">
+          <div *ngIf="re.invalid && (re.dirty||re.touched)"
+             class="alert alert-danger">
+            <div *ngIf="re.errors.required">
+            Ce champ est obligatoire.
+            </div>
+            <div *ngIf="re.errors.minlength">
+            Le champ doit faire au moins 5 caractères.
+            </div>
+          </div>
+        <span class="focus-input100-1"></span>
+        <span class="focus-input100-2"></span>
+      </div>
+      <div class="form-row">
+        <input type="text" name="username" id="username" [(ngModel)]="username" class="input-text ng-invalid ng-touched" placeholder="Your username" required
+               minlength="5" #ree="ngModel">
+        <div *ngIf="ree.invalid && (ree.dirty||ree.touched)"
+             class="alert alert-danger">
+          <div *ngIf="ree.errors.required">
+            Ce champ est obligatoire.
+          </div>
+          <div *ngIf="ree.errors.minlength">
+            Le champ doit faire au moins 5 caractères.
+          </div>
+        </div>
+        <span class="focus-input100-1"></span>
+        <span class="focus-input100-2"></span>
+      </div>
+      <div class="form-row">
+        <input type="password" name="password" id="password" [(ngModel)]="password" class="input-text ng-invalid ng-touched" placeholder="Your password" required
+               minlength="4" #rea="ngModel">
+        <div *ngIf="rea.invalid && (rea.dirty||rea.touched)"
+             class="alert alert-danger">
+          <div *ngIf="rea.errors.required">
+            Ce champ est obligatoire.
+          </div>
+          <div *ngIf="rea.errors.minlength">
+            Le champ doit faire au moins 4 caractères.
+          </div>
+        </div>
+        <span class="focus-input100-1"></span>
+        <span class="focus-input100-2"></span>
+      </div>
+      <div class="form-row">
+        <input type="password" name="repassword" id="repassword" [(ngModel)]="repassword" class="input-text ng-invalid ng-touched" placeholder="Repeat password" appConfirmationValidator="password" required
+               autocomplete="off" #con="ngModel">
+        <div *ngIf="con.invalid && (con.dirty || con.touched)"
+             class="alert alert-danger">
+          <div *ngIf="con.errors.required">
+            Ce champ est obligatoire.
+          </div>
+          <div *ngIf="con.errors.notEqual &&  !con.errors.required" >
+            La confirmation et le mot de passe ne sont pas identiques.
+          </div>
+        </div>
+        <span class="focus-input100-1"></span>
+        <span class="focus-input100-2"></span>
+      </div>
+      <div class="form-row-last">
+        <input type="submit" class="register" [disabled]="!f.valid" value="Register">
+        <p style="margin-top: -40px;"  class="text-muted">Already registered?<a routerLink="/login">Se connecter</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 footer-info">
+
+          <h3><img src="../../assets/img/logo.png">FDIM</h3>
+          <p>La Fédération de l’Industrie Minérale a été créée initialement sous l’appellation de “Groupement des
+            Industries Minières du Maroc” en 1940. Elle a connu une autre appellation en 1943 “La Chambre Syndicale des
+            Industries Minières du Maroc” puis “Association des Industries Minières du Maroc” en 1957 avant de prendre
+            sa forme actuelle, depuis 1998, en tant que Fédération de l’Industrie Minérale (FDIM).</p>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/acceuil">Home</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/page1">PRÉSENTATION DE LA FÉDÉRATION</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/page2">PRINCIPALES MISSIONS DE LA FÉDÉRATION</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/page3">BUREAU DE LA FÉDÉRATION</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/page4">CONSEIL D’ADMINISTRATION</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/page5">SECTEUR MENIER</a></li>
+            <li><i class="ion-ios-arrow-right"></i> <a routerLink="/page6">CADRE LEGISLATIF ET REGLEMENTIRE
+            </a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            FÉDÉRATION DE L’INDUSTRIE MINÉRALE<br>
+            1 SAHAT AL ISTIQLAL CASABLANCA<br>
+            Maroc<br>
+            <strong>Phone:</strong> +212 (0) 22 30.68.98<br>
+            <strong>Email:</strong> fdim@menara.ma<br>
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Tous droits réservés <strong>FDIM</strong> - Réalisation BENNIS
+    </div>
+  </div>
+</footer><!-- End Footer -->
